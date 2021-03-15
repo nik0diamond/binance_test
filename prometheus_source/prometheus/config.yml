@@ -1,0 +1,11 @@
+global:
+  scrape_interval: '5s'
+  evaluation_interval: '5s'
+
+scrape_configs:
+
+  - job_name: binance
+    static_configs:
+      - targets: ['tasks:8080']
+        labels:
+          alias: binance

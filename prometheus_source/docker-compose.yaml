@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+  tasks:
+    container_name: 'tasks'
+    build: ./
+    volumes:
+      - ./output.log:/app/output.log
+  prometheus:
+    build: ./prometheus
+    container_name: 'prometheus'
+    volumes:
+      - ./prometheus/config.yml:/etc/prometheus/config.yml
+    ports:
+      - '9090:9090'
